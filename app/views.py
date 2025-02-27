@@ -14,7 +14,7 @@ def home():
 @app.route('/about/')
 def about():
     """Render the website's about page."""
-    return render_template('about.html', name="Mary Jane")
+    return render_template('about.html', name="Jamila McLymont")
 
 def format_date_joined(date_str):
     """Formats a date string as 'Month, Year' (e.g., 'Feb, 2021')."""
@@ -24,7 +24,7 @@ def format_date_joined(date_str):
 @app.route('/profile/')
 def profile():
     """Render the profile page with formatted join date."""
-    joined_date = "2018-01-15"  # Example date of when the user joined
+    joined_date = "2025-02-15"
     formatted_date = format_date_joined(joined_date)  # Format the date
     return render_template('profile.html', joined_date=formatted_date)
 
@@ -52,3 +52,6 @@ def add_header(response):
 def page_not_found(error):
     """Custom 404 page."""
     return render_template('404.html'), 404
+
+if __name__=="__main__":
+    app.run(debug=True)
